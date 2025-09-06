@@ -1,0 +1,134 @@
+/* Background ทั้งหน้า */
+body {
+      background-color: #f8faff;
+    }
+
+.register-page {
+  background-color: #5583B7; 
+  color: white;
+  padding-top: 80px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+}
+
+/* Logo text */
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logo {
+  margin-top: 60px;  /* เพิ่มระยะห่างจาก navbar */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Input */
+.form-control {
+  border-radius: 8px;
+}
+
+/* ปุ่ม */
+.btn-primary-custom {
+  background-color: #032670;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-primary-custom:hover {
+  background-color: #021a50;
+}
+
+/* ปุ่มลูกตา hover */
+#togglePassword:hover,
+#toggleConfirmPassword:hover {
+  background-color: rgba(0,0,0,0.05);
+  border-color: #032670;
+  color: #032670;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white; /* ปรับสีตัวอักษร */
+}
+
+.separator span {
+  padding: 0 30px; /* เว้นระยะห่างระหว่างคำกับเส้น */
+  font-weight: bold;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: white; /* สีเส้น */
+  margin: 0 20px;
+}
+
+/* Background ทั้งหน้า */
+.login-page {
+  background-color: #5583B7; 
+  color: white;
+  padding-top: 80px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+}
+
+.form-check-label .text-danger {
+  font-weight: 900;
+}
+
+/* Background ทั้งหน้า */
+.home-page {
+  background-color: #ffffff; 
+  color: black;
+  padding-top: 5px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+}
+
+/* สี Background Icon */
+.icon-color {
+  background-color: #C1D5FD;
+}
+
+/* เลือกอาการ */
+.symptom img {
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%;
+}
+/* ชี้เมาส์ */
+.symptom img:hover {
+  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+  cursor: pointer;
+  background-color: #85adff;
+}
+
+.symptom.selected img {
+  border: 3px solid #032670; /* เส้นขอบ highlight */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* เงา */
+  background-color: #85adff; /* พื้นหลังอ่อนๆ */
+}
+
+.symptom-text{
+  cursor: pointer;
+  user-select: none; /* ป้องกันการเลือกข้อความ */
+}
+
+.nav-hover:hover {
+  background-color: #032670;
+  color: white;
+}
+
+.emoji {
+  font-size: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+}
+.emoji:hover {
+  transform: scale(1.2);
+}
+.emoji.selected {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 5px #032670);
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/editprofile.css">
+</head>
+<body>
+    <!-- Navbar -->
+<nav class="navbar sticky-top shadow-sm bg-white">
+  <div class="container d-flex justify-content-between">
+    <!-- Hamburger (แสดงเฉพาะจอเล็ก/กลาง) -->
+      <button class="btn btn-outline-dark d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <span class="fw-bolder text-dark fs-5">I-Check</span>
+    </a>
+
+    <div class="d-flex align-items-center">
+      <!-- User Dropdown -->
+      <div class="dropdown">
+        <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="/images/profile2.jpg" alt="user" width="35" height="35" class="rounded-circle shadow me-2">
+          <span class="text-dark">Tawan</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item nav-hover" href="/user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
+          <li><a class="dropdown-item nav-hover" href="/login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar (offcanvas สำหรับจอเล็ก/กลาง) -->
+    <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="sidebarMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">เมนู</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body sidebar">
+        <a href="/user/profile.html" class="d-block mb-1"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
+        <a href="/user/editProfile.html" class="d-block mb-1"><i class="fa-regular fa-file-lines me-2"></i> แก้ไขโปรไฟล์</a>
+        <a href="/user/editMyInfo.html" class="d-block"><i class="fa-regular fa-calendar me-2"></i> แก้ไขข้อมูลส่วนตัว</a>
+      </div>
+    </div>
+
+    <!-- Sidebar (แสดงเฉพาะจอใหญ่ขึ้นไป) -->
+    <div class="col-lg-2 d-none d-lg-flex flex-column sidebar">
+      <a href="/user/profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
+      <a href="/user/editProfile.html"><i class="fa-regular fa-file-lines me-2"></i> แก้ไขโปรไฟล์</a>
+      <a href="/user/editMyInfo.html"><i class="fa-regular fa-calendar me-2"></i> แก้ไขข้อมูลส่วนตัว</a>
+    </div>
+
+     <class class="col-lg-10 p-5 text-center">
+        <h3 class="fw-bold mb-4">แก้ไขโปรไฟล์</h3>
+        <hr class="mb-5">
+
+        <!-- Profile Picture -->
+        <div class="profile-pic-wrapper mb-5">
+          <img src="/images/profile2.jpg" alt="Profile">
+          <span class="edit-icon"><i class="fa-solid fa-gear"></i></span>
+        </div>
+
+        <!-- Info Table -->
+        <table class="info-table mx-auto">
+        <tr>
+            <td class="label">ชื่อเล่น</td>
+            <td class="value text-start">
+            <div class="content">
+                <span>TawanTawanTawanTawanTawanTawanTawanTawan</span>
+            </div>
+            <button class="btn-edit">เปลี่ยน</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">อีเมล</td>
+            <td class="value">
+            <div class="content text-start">
+                <span>verylongemailaddressverylongsolongemailaddress@gmail.com</span><br>
+                <small class="text-muted">
+                <i class="fa-regular fa-circle-xmark me-1"></i> ไม่สามารถแก้ไข
+                </small>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">รหัสผ่าน</td>
+            <td class="value text-start">
+            <div class="content">
+                <span>***********************</span>
+            </div>
+            <button class="btn-edit">เปลี่ยน</button>
+            </td>
+        </tr>
+        </table>
+
+
+        <button class="btn-save col-10 col-lg-4 my-4">บันทึก</button>
+    
+        </div>
+        <!-- Save Button -->
+        
+      </div>
+   
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Custom JS -->
+  <script src="/js/register.js" defer></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+  <title>Register Page</title>
+</head>
+<body class="register-page">
+  <!-- Navbar --> 
+  <nav class="navbar bg-body-tertiary fixed-top"> 
+    <div class="container"> 
+      <a class="navbar-brand" href="#"> <br> </a> 
+    </div> 
+  </nav>
+
+  <div class="container-fluid d-flex align-items-center pt-5">
+    <div class="row w-100 mb-5">
+
+      <!-- Left side (Logo) -->
+      <div class="col-12 col-lg-5 text-center d-flex flex-column justify-content-center align-items-center mb-5 mb-lg-0">
+        <img src="images/i-check logo.jpg" alt="logo" class="rounded-circle shadow mb-3" width="300" height="300">
+        <h1 class="logo-text">I-Check</h1>
+      </div>
+
+      <!-- Right side (Form) -->
+      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center px-5">
+        <h1 class="text-center fw-bold mb-4">สมัครสมาชิก</h1>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <label class="form-label">ชื่อผู้ใช้</label>
+          <input type="text" class="form-control">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label class="form-label">อีเมล</label>
+          <input type="email" class="form-control" placeholder="example@gmail.com">
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label class="form-label">รหัสผ่าน</label>
+          <div class="input-group">
+            <input type="password" id="inputPassword" class="form-control">
+            <button class="btn btn-light" type="button" id="togglePassword">
+              <i class="bi bi-eye"></i>
+            </button>   
+          </div>
+          <div id="passwordHelpBlock" class="form-text" style="color: antiquewhite; font-weight: 500;">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label class="form-label">ยืนยันรหัสผ่าน</label>
+          <div class="input-group">
+            <input type="password" id="inputConfirmPassword" class="form-control">
+            <button class="btn btn-light" type="button" id="toggleConfirmPassword">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="checkDefault">
+          <label class="form-check-label small" for="checkDefault">
+            โดยการเปิดบัญชี I-Check ท่านรับทราบและตกลงตาม 
+            <span class="text-dark">เงื่อนไขการให้บริการ</span> & 
+            <span class="text-dark">นโยบายความเป็นส่วนตัว</span>
+          </label>
+        </div>
+
+        <!-- Register Button -->
+        <div class="d-grid mb-3">
+          <button id="registerBtn" class="btn btn-lg btn-primary-custom">
+            สมัครสมาชิก
+          </button>
+        </div>
+
+        <div class="text-center fw-bold mb-4 separator my-3 text-center">หรือ</div>
+
+        <!-- Login Button -->
+        <div class="d-grid">
+          <a href="login.html" class="btn btn-lg btn-primary-custom">
+            เข้าสู่ระบบ
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3">
+    <!-- ✅ Success -->
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">✅ สมัครสมาชิกสำเร็จ!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <!-- ❌ Error -->
+    <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="errorToastMessage">❌ กรุณากรอกข้อมูลให้ครบทุกช่อง</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
