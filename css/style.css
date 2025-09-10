@@ -1,12 +1,27 @@
 /* Background ทั้งหน้า */
 body {
-      background-color: #f8faff;
-    }
+  background-color: #f8faff;
+  font-family: 'Kanit','Noto Sans Thai','Mitr' ,sans-serif;
+  font-weight: 300;
+  }
+
+h1, h2, h3 {
+  font-family: 'Kanit','Noto Sans Thai','Mitr' ,sans-serif;
+}
 
 .register-page {
-  background-color: #5583B7; 
-  color: white;
-  padding-top: 80px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+  background-color: #6aa2e7; 
+  padding-top: 50px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+}
+
+.text-head-reg-login{
+  color: black; /* เปลี่ยนสีข้อความเป็นสีดำ */
+  font-size: 50px;
+}
+
+.text-reg-login{
+  color: black; /* เปลี่ยนสีข้อความเป็นสีดำs */
+  font-size: large;
 }
 
 /* Logo text */
@@ -37,7 +52,19 @@ body {
 }
 
 .btn-primary-custom:hover {
-  background-color: #021a50;
+  background-color: #021238;
+  color: white;
+}
+
+.btn-primary-custom-outline {
+  color: #032670;
+  border: 3px solid #032670;
+  border-radius: 6px;
+}
+
+.btn-primary-custom-outline:hover {
+  background-color: #032670;
+  color: white;
 }
 
 /* ปุ่มลูกตา hover */
@@ -52,7 +79,7 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
-  color: white; /* ปรับสีตัวอักษร */
+  color: rgb(0, 0, 0); /* ปรับสีตัวอักษร */
 }
 
 .separator span {
@@ -65,15 +92,14 @@ body {
   content: "";
   flex: 1;
   height: 1px;
-  background-color: white; /* สีเส้น */
+  background-color: rgb(0, 0, 0); /* สีเส้น */
   margin: 0 20px;
 }
 
 /* Background ทั้งหน้า */
 .login-page {
-  background-color: #5583B7; 
-  color: white;
-  padding-top: 80px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+  background-color: #6aa2e7; 
+  padding-top: 100px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
 }
 
 .form-check-label .text-danger {
@@ -89,7 +115,12 @@ body {
 
 /* สี Background Icon */
 .icon-color {
-  background-color: #C1D5FD;
+  background-color: #adcaff;
+}
+
+.symptom {
+  margin: 4px; 
+  padding: 4px;
 }
 
 /* เลือกอาการ */
@@ -97,22 +128,35 @@ body {
   transition: all 0.2s ease-in-out;
   border-radius: 50%;
 }
+
 /* ชี้เมาส์ */
 .symptom img:hover {
   transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
   cursor: pointer;
-  background-color: #85adff;
+  background-color: #436bbd;
 }
 
 .symptom.selected img {
-  border: 3px solid #032670; /* เส้นขอบ highlight */
+  border: 3px solid #61edff; /* เส้นขอบ highlight */
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* เงา */
-  background-color: #85adff; /* พื้นหลังอ่อนๆ */
+  background-color: #335aa8; /* พื้นหลังอ่อนๆ */
+  filter: drop-shadow(0 0 5px #032670);
 }
 
 .symptom-text{
   cursor: pointer;
   user-select: none; /* ป้องกันการเลือกข้อความ */
+}
+
+.symptom:hover .symptom-text {
+  color: #467ae2; /* เปลี่ยนสีข้อความ */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.symptom.selected .symptom-text {
+  color: #1b2f57;
+  font-weight: 600;
 }
 
 .nav-hover:hover {
@@ -131,4 +175,74 @@ body {
 .emoji.selected {
   transform: scale(1.3);
   filter: drop-shadow(0 0 5px #032670);
+}
+
+.text-decoration-under{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.text-decoration-under:hover {
+  text-decoration: underline;
+}
+
+.accord-text{
+  background-color: #F6F8FB;
+  color: #000000;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.top-text-head {
+  font-size: 30px;
+}
+
+.feedback-text{
+  color: #000000;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* ทำให้ label ลอยเมื่อ focus หรือมีค่า */
+.form-floating input:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label {
+    transform: scale(.85) translateY(-1.5rem);
+    opacity: 1;
+    color: #032670;
+}
+
+/* เพิ่มเงาและ hover effect สำหรับ input */
+.form-control {
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(3,38,112,.25);
+    border-color: #032670;
+}
+
+/* ปุ่มลูกตา */
+.btn-eye {
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    line-height: 1; /* กัน icon โดนดัน */
+}
+
+.btn-eye:hover {
+    color: #032670;
+}
+
+@media (max-width: 991.98px) {
+  .text-head-reg-login{
+    font-size: 40px;
+  }
+
+  .login-page {
+    background-color: #6aa2e7; 
+    padding-top: 70px; /* เว้นพื้นที่ด้านบนเท่ากับความสูง navbar */
+  }
 }

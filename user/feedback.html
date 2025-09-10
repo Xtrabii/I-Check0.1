@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- GG Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Geist:wght@100..900&family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
@@ -34,7 +39,7 @@
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="/images/i-check logo.jpg" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow">
-        <span class="fw-bold text-dark fs-5">I-Check</span>
+        <span class=" text-dark fs-5">I-Check</span>
         </a>
 
         <!-- Navbar links -->
@@ -47,7 +52,8 @@
         <!-- User Dropdown -->
         <div class="dropdown">
         <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="/images/profile2.jpg" alt="user" width="35" height="35" class="rounded-circle shadow me-2">
+            <img src="/images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
+            <span class="text-dark">Tawan</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow">
             <li><a class="dropdown-item nav-hover" href="/user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
@@ -60,11 +66,11 @@
     <!-- Content -->
     <main class="container my-5">
     <div class="col-10 col-sm-8 col-lg-6 align-content-center mx-auto">
-    <h4 class="text-center fw-bold mb-4 py-3 rounded-4" style="background-color: #F6F8FB;">Feedback</h4>
+    <h4 class="text-center  mb-4 py-3 rounded-4 accord-text top-text-head">Feedback</h4>
     </div>
     <form id="feedbackForm">
     <div class="mb-3">
-        <label for="feedback" class="form-label text-primary">
+        <label for="feedback" class="form-label feedback-text">
         โปรดให้คะแนนการใช้งานเว็บไซต์ เพื่อเป็นแนวทางในการพัฒนาเว็บไซต์
         </label>
         <!-- Emoji Rating -->
@@ -77,41 +83,42 @@
         </div>
         <!-- Hidden input เก็บค่า rating -->
         <input type="hidden" id="rating" name="rating">
-        <textarea class="form-control" id="feedback" name="feedback" rows="4" placeholder="Add your comments..."></textarea>
+        <textarea class="form-control" id="feedback" name="feedback" rows="4" placeholder="เพิ่มความคิดเห็น..."></textarea>
     </div>
     <div class="text-center mt-4">
-        <button type="submit" class="btn px-5 py-2 fw-bold text-light col-12" style="background-color: #032670;">
+        <button type="submit" class="btn px-5 py-2 col-11 col-md-8 col-lg-5 btn-primary-custom">
         ส่งแบบฟอร์ม
         </button>
     </div>
     </form>
     </main>
 
-<!-- Footer -->
-<footer class="text-white py-5 d-flex flex-wrap justify-content-between align-items-center" style="background-color:#1B2B3F;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <h5><img src="/images/i-check logo.jpg" alt="Logo" width="30" height="30" class="me-2 rounded-circle shadow"> I-Check</h5>
-        <p class="small">ระบบวิเคราะห์อาการเบื้องต้น</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h5>Company</h5>
-        <ul class="list-unstyled small">
-          <li><a href="#" class="text-white text-decoration-none">About us</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h5>Support</h5>
-        <ul class="list-unstyled small ">
-          <li><a href="#" class="text-white text-decoration-none">Terms of service</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Privacy policy</a></li>
-        </ul>
+  <!-- Footer -->
+  <footer class="text-white py-4 d-flex flex-wrap justify-content-between align-items-center" style="background-color:#1B2B3F;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mx-auto mb-3 mb-md-0 text-center text-md-start">
+          <h5><img src="/images/i-check logo.jpg" alt="Logo" width="30" height="30" class="me-2 rounded-circle shadow"> I-Check</h5>
+          <p class="small">ระบบวิเคราะห์อาการเบื้องต้น</p>
+          © 2025 I-Check | All Rights Reserved
+        </div>
+        <div class="col-4 col-md-4 my-3 my-md-0 mx-auto">
+          <h5>Company</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">About us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="col-4 col-md-4 my-3 my-md-0 mx-auto">
+          <h5>Support</h5>
+          <ul class="list-unstyled small ">
+            <li><a href="/privacy-policy.html" class="text-white text-decoration-under" target="_blank" rel="noopener noreferrer">Privacy policy</a></li>
+            <li><a href="/terms-of-service.html" class="text-white text-decoration-under" target="_blank" rel="noopener noreferrer">Terms of service</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>

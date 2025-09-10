@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- GG Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Geist:wght@100..900&family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
@@ -30,7 +35,7 @@
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="/images/i-check logo.jpg" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow">
-      <span class="fw-bold text-dark fs-5">I-Check</span>
+      <span class="text-dark fs-5">I-Check</span>
     </a>
 
     <!-- Navbar links -->
@@ -43,7 +48,8 @@
     <!-- User Dropdown -->
     <div class="dropdown">
       <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="/images/profile2.jpg" alt="user" width="35" height="35" class="rounded-circle shadow me-2">
+        <img src="/images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
+        <span class="text-dark">Tawan</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end shadow">
         <li><a class="dropdown-item nav-hover" href="/user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
@@ -56,76 +62,55 @@
 <!-- Content -->
 <main class="container my-5">
   <div class="col-10 col-sm-8 col-lg-6 align-content-center mx-auto">
-  <h4 class="text-center fw-bold mb-4 py-3 rounded-4" style="background-color: #F6F8FB;">เลือกอาการ</h4>
+  <h4 class="text-center mb-4 py-3 rounded-4 accord-text top-text-head">เลือกอาการ</h4>
   </div>
 
   <!-- Example Accordion Section -->
   <div class="accordion" id="symptomAccordion">
 
-    <!-- ไม่มีอาการ -->
-    <div class="accordion-item mb-3 shadow-sm col-11 col-md-12 col-lg-12 mx-auto">
-      <h2 class="accordion-header">
-        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#noSymptom" style="background-color: #F6F8FB;">
-          ไม่มีอาการ
-        </button>
-      </h2>
-      <div id="noSymptom" class="accordion-collapse collapse show">
-        <div class="accordion-body">
-          <div class="d-flex flex-wrap gap-3 row">
-            <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 text-center symptom" data-symptom="none">
-              <img src="/images/icons/smile.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
-              <p class="mt-2 small symptom-text">ไม่มีอาการ</p>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- บริเวณศรีษะ -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-12 mx-auto">
+    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#head" style="background-color: #F6F8FB;">
+        <button class="accordion-button collapsed accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#head">
           บริเวณศรีษะ
         </button>
       </h2>
       <div id="head" class="accordion-collapse collapse show">
         <div class="accordion-body">
-          <div class="row g-4">
+          <div class="row">
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="dizzy">
-              <img src="/images/icons/dizzy.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="dizzy">
+              <img src="/images/icons/dizzy.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">เวียนหัว</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="headache">
-              <img src="/images/icons/headache.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="headache">
+              <img src="/images/icons/headache.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ปวดหัว</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="fainting">
-              <img src="/images/icons/fainting.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="fainting">
+              <img src="/images/icons/fainting.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">หน้ามืด</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="tinnitus">
-              <img src="/images/icons/tinnitus.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="tinnitus">
+              <img src="/images/icons/tinnitus.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">หูอื้อ</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="noise">
-              <img src="/images/icons/noise.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="noise">
+              <img src="/images/icons/noise.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ได้ยินเสียงแว่ว</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="forgetful">
-              <img src="/images/icons/forgetful.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="forgetful">
+              <img src="/images/icons/forgetful.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ขี้ลืม</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="blurred-vision">
-              <img src="/images/icons/blurred.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="blurred-vision">
+              <img src="/images/icons/blurred.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">สายตาพร่ามัว</p>
             </div>
 
@@ -135,33 +120,33 @@
     </div>
 
     <!-- บริเวณลำตัวช่วงอก - ท้อง -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-12 mx-auto">
+    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#chestAndAbdomen" style="background-color: #F6F8FB;">
+        <button class="accordion-button collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#chestAndAbdomen">
           บริเวณลำตัวช่วงอก - ท้อง
         </button>
       </h2>
       <div id="chestAndAbdomen" class="accordion-collapse collapse show">
         <div class="accordion-body">
-          <div class="row g-4">
+          <div class="row">
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="bloating">
-              <img src="/images/icons/bloating.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="bloating">
+              <img src="/images/icons/bloating.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ท้องอืด</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="constipation">
-              <img src="/images/icons/constipation.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="constipation">
+              <img src="/images/icons/constipation.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ท้องผูก</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="loss-of-appetite">
-              <img src="/images/icons/loss-of-appetite.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="loss-of-appetite">
+              <img src="/images/icons/loss-of-appetite.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">เบื่ออาหาร</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="hungry">
-              <img src="/images/icons/hungry.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="hungry">
+              <img src="/images/icons/hungry.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">หิวบ่อย</p>
             </div>
 
@@ -171,23 +156,23 @@
     </div>
 
     <!-- บริเวณลำตัวส่วนล่างช่วงเอว - ขา -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-12 mx-auto">
+    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#waistAndLegs" style="background-color: #F6F8FB;">
+        <button class="accordion-button collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#waistAndLegs">
           บริเวณลำตัวส่วนล่างช่วงเอว - ขา
         </button>
       </h2>
       <div id="waistAndLegs" class="accordion-collapse collapse show">
         <div class="accordion-body">
-          <div class="row g-4">
+          <div class="row">
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="legs-pain">
-              <img src="/images/icons/legs-pain.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="legs-pain">
+              <img src="/images/icons/legs-pain.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ปวดขา</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="backache">
-              <img src="/images/icons/backache.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="backache">
+              <img src="/images/icons/backache.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ปวดหลัง</p>
             </div>
             
@@ -197,23 +182,23 @@
     </div>
 
     <!-- ทั่วไป -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-12 mx-auto">
+    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
-        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#normal" style="background-color: #F6F8FB;">
+        <button class="accordion-button collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#normal">
           ทั่วไป
         </button>
       </h2>
       <div id="normal" class="accordion-collapse collapse show">
         <div class="accordion-body">
-          <div class="row g-4">
+          <div class="row">
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="heart-palpitations">
-              <img src="/images/icons/heart-palpitations.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="heart-palpitations">
+              <img src="/images/icons/heart-palpitations.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">ใจสั่น</p>
             </div>
             <!-- อาการ -->
-            <div class="col-4 col-md-2 col-lg-1 mx-3 text-center symptom" data-symptom="sweating">
-              <img src="/images/icons/sweating.png" class="rounded-circle shadow-sm p-2 icon-color" width="60" height="60">
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="sweating">
+              <img src="/images/icons/sweating.png" class="rounded-circle shadow-sm p-2 icon-color" width="70" height="70">
               <p class="mt-2 small symptom-text">เหงื่อออกมากผิดปกติ</p>
             </div>
             
@@ -225,35 +210,36 @@
 
   <!-- ปุ่ม -->
   <div class="text-center mt-5">
-    <a href="result.html" class="btn px-5 py-2 fw-bold text-light col-11 col-md-12 col-lg-12" style="background-color: #032670;">วินิจฉัยอาการ </a>
+    <a href="result.html" class="btn px-5 py-2  col-11 col-md-8 col-lg-5 btn-primary-custom">วินิจฉัยอาการ </a>
   </div>
 </main>
 
-<!-- Footer -->
-<footer class="text-white py-5 d-flex flex-wrap justify-content-between align-items-center" style="background-color:#1B2B3F;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3">
-        <h5><img src="/images/i-check logo.jpg" alt="Logo" width="30" height="30" class="me-2 rounded-circle shadow"> I-Check</h5>
-        <p class="small">ระบบวิเคราะห์อาการเบื้องต้น</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h5>Company</h5>
-        <ul class="list-unstyled small">
-          <li><a href="#" class="text-white text-decoration-none">About us</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h5>Support</h5>
-        <ul class="list-unstyled small ">
-          <li><a href="#" class="text-white text-decoration-none">Terms of service</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Privacy policy</a></li>
-        </ul>
+  <!-- Footer -->
+  <footer class="text-white py-4 d-flex flex-wrap justify-content-between align-items-center" style="background-color:#1B2B3F;">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-4 mx-auto mb-3 mb-md-0 text-center text-md-start">
+          <h5><img src="/images/i-check logo.jpg" alt="Logo" width="30" height="30" class="me-2 rounded-circle shadow"> I-Check</h5>
+          <p class="small">ระบบวิเคราะห์อาการเบื้องต้น</p>
+          © 2025 I-Check | All Rights Reserved
+        </div>
+        <div class="col-4 col-md-4 my-3 my-md-0 mx-auto">
+          <h5>Company</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="text-white text-decoration-none">About us</a></li>
+            <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="col-4 col-md-4 my-3 my-md-0 mx-auto">
+          <h5>Support</h5>
+          <ul class="list-unstyled small ">
+            <li><a href="/privacy-policy.html" class="text-white text-decoration-under" target="_blank" rel="noopener noreferrer">Privacy policy</a></li>
+            <li><a href="/terms-of-service.html" class="text-white text-decoration-under" target="_blank" rel="noopener noreferrer">Terms of service</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>

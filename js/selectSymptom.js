@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", function () {
           this.classList.add("selected");
         }
       } else {
-        // ถ้าเลือกอาการอื่น -> ยกเลิก "ไม่มีอาการ"
-        const noneSymptom = document.querySelector('[data-symptom="none"]');
-        if (noneSymptom) {
-          noneSymptom.classList.remove("selected");
-        }
+        // // ถ้าเลือกอาการอื่น -> ยกเลิก "ไม่มีอาการ"
+        // const noneSymptom = document.querySelector('[data-symptom="none"]');
+        // if (noneSymptom) {
+        //   noneSymptom.classList.remove("selected");
+        // }
 
         this.classList.toggle("selected");
       }

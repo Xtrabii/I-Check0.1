@@ -28,6 +28,7 @@ $(document).ready(function () {
       icon: 'success',
       title: 'ส่งแบบฟอร์มสำเร็จ',
       text: 'ขอบคุณสำหรับความคิดเห็นของคุณ!',
+      confirmButtonColor: '#3085d6',
       confirmButtonText: 'ตกลง'
     }).then(() => {
       // รีเซ็ตฟอร์ม

@@ -1,88 +1,101 @@
-    .profile-pic-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-    .profile-pic-wrapper img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .profile-pic-wrapper .edit-icon {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      background: #fff;
-      border-radius: 50%;
-      padding: 6px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-    .info-table {
-    width: 100%;
-    max-width: 600px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    border-collapse: collapse;
-    background: #fff;
-    overflow: hidden;
-    }
+.profile-pic-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
-    .info-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-    }
+.profile-pic-wrapper img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
-    .info-table tr:last-child td {
-    border-bottom: none;
-    }
+.profile-pic-wrapper .edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
 
-    .info-table .label {
-    width: 30%;
-    font-weight: bold;
-    background: #f8f8f8;
-    }
+.info-table {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  border-collapse: collapse;
+  background: #fff;
+  overflow: hidden;
+}
 
-    .info-table .value {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-    }
+.info-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
 
-    .info-table .value .content {
-    flex: 1;
-    min-width: 0;
-    word-break: break-word;   /* ตัดคำขึ้นบรรทัดใหม่เมื่อยาวเกิน */
-    white-space: normal;
-    }
+.info-table tr:last-child td {
+  border-bottom: none;
+}
 
-    .btn-edit {
-    background: #fff;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    flex-shrink: 0;  /* ปุ่มไม่ถูกบีบ */
-    }
+.info-table .label {
+  width: 30%;
+  font-weight: bold;
+  background: #f8f8f8;
+}
 
-    .btn-edit:hover {
-    background: #f5f5f5;
-    }
+.info-table .value {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
 
-    .text-muted {
-    color: #888;
-    font-size: 13px;
-    }
+.info-table .value .content {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;   /* ตัดคำขึ้นบรรทัดใหม่เมื่อยาวเกิน */
+  white-space: normal;
+}
 
-    .btn-save{
-        background: #032670;
-        color: #fff;
-        border: 1px solid #ccc;
-        font-size: 18px;
-        padding: 6px 12px;
-        border-radius: 10px;
-        cursor: pointer;
-    }
+.btn-edit {
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  flex-shrink: 0;  /* ปุ่มไม่ถูกบีบ */
+}
+
+.btn-edit:hover {
+  background: #f5f5f5;
+}
+
+.text-muted {
+  color: #888;
+  font-size: 13px;
+}
+
+.btn-save{
+  background: #032670;
+  color: #fff;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #021238;
+  color: #fff;
+}
+
+.top-text-head-profile {
+  font-size: 40px;
+}
+

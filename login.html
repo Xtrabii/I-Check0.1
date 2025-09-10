@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- GG Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Geist:wght@100..900&family=Mitr:wght@200;300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
@@ -14,84 +19,68 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Custom JS -->
+    <script src="/js/login.js" defer></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <title>Login Page</title>
 </head>
 <body class="login-page">
-  <!-- Navbar --> 
-    <nav class="navbar bg-body-tertiary fixed-top"> 
-        <div class="container"> 
-            <a class="navbar-brand" href="#"> <br> 
-            </a> 
-        </div> 
-    </nav>
 
-  <div class="container-fluid d-flex align-items-center pt-5">
-    <div class="row w-100 mb-5">
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-10 col-sm-7 col-lg-5 bg-white p-5 rounded shadow">
 
-      <!-- Left side (Logo) -->
-      <div class="col-12 col-lg-5 text-center d-flex flex-column justify-content-center align-items-center mb-5 mb-lg-0">
-        <img src="images/i-check logo.jpg" alt="logo" class="rounded-circle shadow mb-3" width="300" height="300">
-        <h1 class="logo-text">I-Check</h1>
-      </div>
-
-      <!-- Right side (Form) -->
-      <div class="col-12 col-lg-6 d-flex flex-column justify-content-center px-5">
-        <h1 class="text-center fw-bold mb-4">เข้าสู่ระบบ</h1>
+        <div class="text-center mb-4">
+          <img src="images/i-check logo.jpg" alt="logo" class="rounded-circle shadow mb-3" width="120" height="120">
+          <h3 class="text-center mb-4 text-head-reg-login">เข้าสู่ระบบ</h3>
+        </div>
 
         <!-- Email -->
-        <div class="mb-3">
-          <label class="form-label">อีเมล</label>
-          <input type="email" class="form-control" placeholder="example@gmail.com">
+        <div class="form-floating mb-3 col-10 mx-auto">
+          <input type="email" id="email" class="form-control" placeholder="">
+          <label for="email"><i class="bi bi-envelope me-2"></i>อีเมล</label>
         </div>
 
         <!-- Password -->
-        <div class="mb-5">
-          <label class="form-label">รหัสผ่าน</label>
-          <div class="input-group">
-            <input type="password" id="inputPassword" class="form-control">
-            <button class="btn btn-light" type="button" id="togglePassword">
-              <i class="bi bi-eye"></i>
-            </button>
-          </div>
+        <div class="position-relative form-floating mb-4 col-10 mx-auto">
+          <input type="password" id="password" class="form-control" placeholder="">
+          <label for="password">รหัสผ่าน</label>
+          <button class="btn position-absolute top-50 end-0 translate-middle-y me-2" type="button" id="togglePassword">
+            <i class="bi bi-eye-slash"></i>
+          </button>
         </div>
-
-        <!-- Register Button -->
-        <div class="d-grid mb-3">
-          <a class="btn btn-lg btn-primary-custom" href="user/index.html">
-            เข้าสู่ระบบ
-          </a>
-        </div>
-
-        <div class="text-center fw-bold mb-4 separator my-3 text-center">หรือ</div>
 
         <!-- Login Button -->
-        <div class="d-grid">
-          <a class="btn btn-lg btn-primary-custom" href="register.html">
+        <div class="d-grid mb-3 col-10 mx-auto">
+          <button class="btn btn-primary-custom btn-lg" id="loginBtn">เข้าสู่ระบบ</button>
+        </div>
+
+        <div class="text-center mb-4 separator my-3 text-center col-10 mx-auto">หรือ</div>
+
+        <!-- Register Button -->
+        <div class="d-grid col-10 mx-auto">
+          <a class="btn btn-primary-custom-outline btn-lg" href="register.html">
             สมัครสมาชิก
           </a>
         </div>
-        
+
       </div>
     </div>
   </div>
 
-  <script>
-    function setupTogglePassword(buttonId, inputId) {
-      const toggleBtn = document.querySelector(buttonId);
-      const input = document.querySelector(inputId);
-      const icon = toggleBtn.querySelector('i');
+  <!-- ✅ Toast -->
+  <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 2000;">
+    <div id="loginToast" class="toast align-items-center text-white border-0" role="alert">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">ข้อความแจ้งเตือน</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+      </div>
+    </div>
+  </div>
 
-      toggleBtn.addEventListener('click', () => {
-        const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-        input.setAttribute('type', type);
-        icon.classList.toggle('bi-eye');
-        icon.classList.toggle('bi-eye-slash');
-      });
-    }
 
-    setupTogglePassword('#togglePassword', '#inputPassword');
-
-  </script>
-    
 </body>
 </html>
