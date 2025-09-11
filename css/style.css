@@ -114,8 +114,16 @@ h1, h2, h3 {
 }
 
 /* สี Background Icon */
-.icon-color {
+.icon-symptom {
   background-color: #adcaff;
+  width: 70px;
+  height: 70px;
+}
+
+.icon-accordion {
+  background-color: #2c2c2c;
+  width: 40px;
+  height: 40px;
 }
 
 .symptom {
@@ -193,6 +201,37 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
+.accordion-head-red{
+  background-color: #fcb9b9;
+}
+
+.accordion-head-red:not(.collapsed) {
+  background-color: #fcb9b9 !important;
+  color: #000 !important;                /* สีตัวหนังสือ */
+  box-shadow: none !important;  
+}
+
+.accordion-head-red:hover {
+  background-color: #e97a7a;
+}
+
+.accordion-red {
+  background-color: #ffdbdb;
+}
+
+/* ตั้งสี accordion ตอนเปิดอยู่ */
+.accordion-button-normal:not(.collapsed) {
+  background-color: #F6F8FB !important;  /* สีที่ใช้ */
+  color: #000 !important;                /* สีตัวหนังสือ */
+  box-shadow: none !important;           /* เอาเงาออก */
+}
+
+/* ตั้งสีตอน hover */
+.accordion-button-normal:hover {
+  background-color: #c9cbd1; /* สีตอน hover */
+  color: #000;
+}
+
 .top-text-head {
   font-size: 30px;
 }
@@ -225,7 +264,7 @@ h1, h2, h3 {
 .btn-eye {
     border: none;
     background: transparent;
-    padding: 0.25rem 0.5rem;
+    padding: 0.75rem 0.75rem;
     cursor: pointer;
     top: 50% !important;
     transform: translateY(-50%) !important;

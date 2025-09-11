@@ -16,11 +16,14 @@
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Custom JS -->
-  <script src="/js/register.js" defer></script>
+  <script src="./js/register.js" defer></script>
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -47,13 +50,13 @@
         <!-- Email -->
         <div class="form-floating mb-3 col-10 mx-auto">
           <input type="email" class="form-control text-reg-login" placeholder="">
-          <label for="floatingInput"><i class="fa-regular fa-id-card me-2"></i>อีเมล</label>
+          <label for="floatingInput"><i class="bi bi-envelope me-2"></i>อีเมล</label>
         </div>
 
         <!-- Password -->     
         <div class="position-relative form-floating col-10 mx-auto">
           <input type="password" id="inputPassword" class="form-control text-reg-login" placeholder="">
-          <label for="password">รหัสผ่าน</label>
+          <label for="password"><i class="fa-solid fa-lock me-2"></i>รหัสผ่าน</label>
           <button class="btn-eye position-absolute top-50 end-0 translate-middle-y me-2" type="button" id="togglePassword">
             <i class="bi bi-eye-slash"></i>
           </button>    
@@ -65,7 +68,7 @@
         <!-- Confirm Password -->
         <div class="position-relative form-floating mb-3 col-10 mx-auto">
           <input type="password" id="inputConfirmPassword" class="form-control text-reg-login" placeholder="">
-          <label for="confirmPassword">ยืนยันรหัสผ่าน</label>
+          <label for="confirmPassword"><i class="fa-solid fa-lock me-2"></i>ยืนยันรหัสผ่าน</label>
           <button class="btn-eye position-absolute top-50 end-0 translate-middle-y me-2" type="button" id="toggleConfirmPassword">
             <i class="bi bi-eye-slash"></i>
           </button>
