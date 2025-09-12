@@ -1,0 +1,54 @@
+th {
+    font-weight: 400;
+}
+
+/* ตาราง responsive */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Table hover */
+.table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: 0.2s;
+}
+
+/* Card styling */
+.card {
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+/* Search bar */
+.input-group .form-control {
+  border-radius: 0.5rem;
+}
+
+/* ใส่ใน admin-manage.css */
+.comment-cell {
+  max-width: 250px;       /* กำหนดความกว้างสูงสุดของ cell */
+  white-space: nowrap;    /* ข้อความไม่ขึ้นบรรทัดใหม่ */
+  overflow: hidden;       /* ซ่อนข้อความเกิน */
+  text-overflow: ellipsis; /* แสดง … */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-text-head-profile {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .table th, .table td {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  #searchInput {
+    font-size: 0.9rem;
+  }
+}

@@ -43,8 +43,10 @@
 
 .info-table .label {
   width: 30%;
-  font-weight: bold;
-  background: #f8f8f8;
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+  background: #e4e3e3;
 }
 
 .info-table .value {
@@ -55,6 +57,7 @@
 }
 
 .info-table .value .content {
+  font-size: 15px;
   flex: 1;
   min-width: 0;
   word-break: break-word;   /* ตัดคำขึ้นบรรทัดใหม่เมื่อยาวเกิน */

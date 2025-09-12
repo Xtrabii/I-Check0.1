@@ -1,0 +1,27 @@
+.barchart {
+    height: 400px;
+}
+
+.diseasechart {
+    height: 500px;
+}
+
+.text-head {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+@media (max-width: 991.98px) {
+    .barchart {
+        height: 200px;
+    }
+
+    .diseasechart {
+        height: 250px;
+    }
+
+    .text-head {
+        font-size: 22px;
+        font-weight: 500;
+    }
+}
