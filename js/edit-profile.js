@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // ✅ Mock "ส่งข้อมูลไป backend"
       console.log("ส่งข้อมูลไป backend (mock):", { name: newName });
 
+      const saveButton = document.querySelector(".btn-save");
+      const role = saveButton.dataset.role; // จะได้ค่า "user" หรือ "admin"
+
       // แสดง Swal success
       Swal.fire({
         icon: "success",
@@ -30,8 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmButtonText: "ตกลง",
         confirmButtonColor: "#3085d6"
       }).then(() => {
-        // เด้งไปหน้า profile (จำลอง)
-        window.location.href = "../user/profile.html";
+        if (role === "admin") {
+          window.location.href = "../admin/admin-profile.html"; 
+        } else {
+          // เด้งไปหน้า profile (จำลอง)
+          window.location.href = "../user/profile.html";
+        }
       });
     });
   }

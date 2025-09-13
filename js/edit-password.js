@@ -81,6 +81,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // 🟢 จำลองการบันทึก (รอเชื่อม Database)
         await new Promise(resolve => setTimeout(resolve, 500));
 
+        const saveButton = document.querySelector(".btn-save");
+        const role = saveButton.dataset.role; // จะได้ค่า "user" หรือ "admin"
+
         Swal.fire({
           icon: "success",
           title: "บันทึกสำเร็จ",
@@ -88,8 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
           confirmButtonText: "ตกลง",
           confirmButtonColor: "#3085d6"
         }).then(() => {
-          window.location.href = "../user/profile.html";
+          if (role === "admin") {
+            window.location.href = "../admin/admin-profile.html"; 
+          } else {
+            window.location.href = "../user/profile.html"; 
+          }
         });
+
 
       } catch (err) {
         Swal.fire({

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td>${new Date(user.createdDate).toLocaleDateString("en-GB")}</td>
         <td class="text-center">
           <i class="fa-solid fa-pen-to-square text-primary me-2 btn-edit" role="button"></i>
-          <i class="${user.isSuspended ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-trash text-danger'} btn-suspend" role="button"></i>
+          <i class="${user.isSuspended ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-ban text-danger'} btn-suspend" role="button"></i>
           <span class="ms-2">${user.isSuspended ? 'ระงับบัญชี' : ''}</span>
         </td>
       `;
