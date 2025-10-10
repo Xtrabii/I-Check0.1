@@ -5,20 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const diseasesName = document.getElementById("diseasesName");
   const tags = document.getElementById("tags");
   const content = document.getElementById("content");
-  const source = document.getElementById("source");
 
   // ฟังก์ชันเพิ่มโรคใหม่
   saveBtn.addEventListener("click", () => {
     const name = diseasesName.value.trim();
     const tag = tags.value;
     const cont = content.value.trim();
-    const src = source.value.trim();
 
-    if (!name || !cont || !src) {
+    if (!name || !cont) {
       Swal.fire({
         icon: "warning",
         title: "กรอกข้อมูลไม่ครบ",
-        text: "กรุณากรอกชื่อโรค, Content และ Source ให้ครบทุกช่อง",
+        text: "กรุณากรอกข้อมูลให้ครบทุกช่อง",
+        confirmButtonText: "ตกลง",
+        customClass: {
+          confirmButton: "gradient-btn"
+        }
       });
       return;
     }
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       name: name,
       tags: tag,
       content: cont,
-      source: src,
       createdDate: new Date().toISOString().split("T")[0] // yyyy-mm-dd
     };
 
@@ -46,8 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     Swal.fire({
       icon: "success",
       title: "เพิ่มโรคเรียบร้อย",
-      text: `โรค "${name}" ถูกเพิ่มเข้าสู่ระบบแล้ว`,
-      confirmButtonText: "ตกลง"
+      text: `โรค "${name}" ถูกเพิ่มเข้าฐานข้อมูลแล้ว`,
+      confirmButtonText: "ตกลง",
+      customClass: {
+        confirmButton: "gradient-btn"
+      }
     }).then(() => {
       window.location.href = "admin-mange-diseases.html"; // กลับหน้า manage
     });
@@ -60,7 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "คุณแน่ใจหรือไม่?",
       text: "ต้องการยกเลิกการเพิ่มโรคและกลับไปหน้าจัดการโรคหรือไม่?",
       showCancelButton: true,
+      // ปุ่มยกเลิก
       confirmButtonText: "ยกเลิก",
+      customClass: {
+        confirmButton: "gradient-btn"
+      },
+      // ปุ่มไม่ยกเลิก
       cancelButtonText: "ไม่ยกเลิก"
     }).then(result => {
       if (result.isConfirmed) {

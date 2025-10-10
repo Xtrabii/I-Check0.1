@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
       icon: 'success',
       title: 'เสร็จสิ้น',
       text: 'กลับไปหน้าจัดการฟีดแบค',
-      confirmButtonText: 'ตกลง'
+      confirmButtonText: 'ตกลง',
+      customClass: {
+        confirmButton: "gradient-btn"
+      }
     }).then(() => {
       window.location.href = "admin-manage-feedbacks.html";
     });

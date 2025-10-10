@@ -22,18 +22,19 @@
 }
 
 .info-table {
+  font-size: 20px;
+  font-weight: 400;
   width: 100%;
   max-width: 600px;
-  border: 1px solid #ddd;
   border-radius: 6px;
   border-collapse: collapse;
-  background: #fff;
+  background: radial-gradient(circle, #fafcff, #ebf3ff);
   overflow: hidden;
 }
 
 .info-table td {
   padding: 12px 16px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #bbbbbb;
   vertical-align: middle;
 }
 
@@ -41,12 +42,13 @@
   border-bottom: none;
 }
 
+/* หัวข้อ */
 .info-table .label {
   width: 30%;
   font-size: 18px;
   font-weight: 400;
   color: black;
-  background: #e4e3e3;
+  background: radial-gradient(circle, #e7e7e7, #cecdcd);
 }
 
 .info-table .value {
@@ -64,27 +66,13 @@
   white-space: normal;
 }
 
-.btn-edit {
-  background: #fff;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  cursor: pointer;
-  flex-shrink: 0;  /* ปุ่มไม่ถูกบีบ */
-}
-
-.btn-edit:hover {
-  background: #f5f5f5;
-}
-
-.text-muted {
-  color: #888;
+.text-readonly {
+  color: #c5c9cf;
   font-size: 13px;
 }
 
 .btn-save{
-  background: #032670;
+  background: linear-gradient(to right, #284cc2, #0235c2);
   color: #fff;
   border: 1px solid #ccc;
   font-size: 18px;
@@ -94,7 +82,7 @@
 }
 
 .btn-save:hover {
-  background: #021238;
+  background: linear-gradient(to right, #20357c, #011857);
   color: #fff;
 }
 
@@ -109,7 +97,7 @@
 
 .text-input-myinfo {
   color: black;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -117,4 +105,86 @@
   cursor: pointer;
   transform: scale(1.25); ;
   margin-right: 15px;
+}
+
+/* --- Profile Card --- */
+.profile-card {
+    border: none;
+    border-radius: 1rem;
+    max-width: 800px;
+    margin: 0 auto; /* ทำให้การ์ดอยู่กึ่งกลาง */
+}
+
+/* --- Profile Picture --- */
+.profile-pic-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-pic-wrapper img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.profile-pic-wrapper .edit-icon {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #0d6efd;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.profile-pic-wrapper .edit-icon:hover {
+    background: #0b5ed7;
+}
+
+
+/* --- Info List (แทน Table เดิม) --- */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.item-content {
+    flex-grow: 1;
+    padding-right: 1rem;
+    word-break: break-word;
+}
+
+.item-label {
+    display: block;
+    color: #bfc8cf;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.item-value {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
 }

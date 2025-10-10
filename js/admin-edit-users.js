@@ -45,14 +45,22 @@ document.addEventListener("DOMContentLoaded", () => {
       cancelButtonText: "ยกเลิก",
       buttonsStyling: false,
       customClass: {
-        confirmButton: 'btn btn-primary btn-lg mx-2',
-        cancelButton: 'btn btn-secondary btn-lg mx-2'
+        confirmButton: 'btn gradient-btn mx-2',
+        cancelButton: 'btn btn-secondary mx-2'
       }
     }).then((result) => {
       if (result.isConfirmed) {
         // ในอนาคต save ไป database
         sessionStorage.setItem("editUser", JSON.stringify(user));
-        Swal.fire('บันทึกแล้ว!', `ข้อมูลผู้ใช้ ${user.name} ถูกบันทึกเรียบร้อย`, 'success')
+        Swal.fire({
+          icon:'success',
+          title:'บันทึกแล้ว!', 
+          text:`ข้อมูลผู้ใช้ ${user.name} ถูกบันทึกเรียบร้อย`,
+          confirmButtonText: "ตกลง",
+          customClass: {
+            confirmButton: "gradient-btn"
+          },
+        })
         .then(() => {
           window.location.href = "admin-manage-users.html";
         });
@@ -70,14 +78,22 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelButtonText: "ยกเลิก",
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-danger btn-lg mx-2',
-          cancelButton: 'btn btn-secondary btn-lg mx-2'
+          confirmButton: 'btn btn-danger mx-2',
+          cancelButton: 'btn btn-secondary mx-2'
         }
       }).then(result => {
         if (result.isConfirmed) {
           user.isSuspended = true;
           updateSuspendButton();
-          Swal.fire('ระงับแล้ว!', `บัญชีผู้ใช้ ${user.name} ถูกระงับเรียบร้อย`, 'success');
+          Swal.fire({
+            icon:'success',
+            title:'ระงับแล้ว!', 
+            text:`บัญชีผู้ใช้ ${user.name} ถูกระงับเรียบร้อย`, 
+            confirmButtonText: "ตกลง",
+            customClass: {
+              confirmButton: "gradient-btn"
+            },
+            });
         }
       });
     } else {
@@ -89,14 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelButtonText: "ไม่",
         buttonsStyling: false,
         customClass: {
-          confirmButton: 'btn btn-success btn-lg mx-2',
-          cancelButton: 'btn btn-secondary btn-lg mx-2'
+          confirmButton: 'btn btn-success mx-2',
+          cancelButton: 'btn btn-secondary mx-2'
         }
       }).then(result => {
         if (result.isConfirmed) {
           user.isSuspended = false;
           updateSuspendButton();
-          Swal.fire('เรียบร้อย!', `บัญชีผู้ใช้ ${user.name} สามารถใช้งานได้แล้ว`, 'success');
+          Swal.fire({
+            icon:'success',
+            title:'เรียบร้อย!', 
+            text:`บัญชีผู้ใช้ ${user.name} สามารถใช้งานได้แล้ว`, 
+            confirmButtonText: "ตกลง",
+            customClass: {
+              confirmButton: "gradient-btn"
+            },
+          });
         }
       });
     }

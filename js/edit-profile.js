@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop(); 
+  const menuLinks = document.querySelectorAll(".sidebar a");
+
+  menuLinks.forEach(link => {
+    if(link.getAttribute("href").includes(currentPath)) {
+      link.classList.add("active");
+    }
+  });
+
   const saveButton = document.querySelector(".btn-save");
 
   if (saveButton) {
@@ -43,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+

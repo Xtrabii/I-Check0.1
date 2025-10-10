@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log("tag จาก sessionStorage:", disease.tags); ไว้เช็คค่า tags
     document.getElementById("tags").value = disease.tags || "nervousSystem";
     document.getElementById("content").value = disease.content || "";
-    document.getElementById("source").value = disease.source || "";
 
     // ปุ่มบันทึก
     document.getElementById("saveBtn").addEventListener("click", () => {
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
             name: document.getElementById("diseasesName").value.trim(),
             tags: document.getElementById("tags").value, 
             content: document.getElementById("content").value.trim(),
-            source: document.getElementById("source").value.trim(),
         };
 
 
@@ -42,7 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: "success",
             title: "บันทึกข้อมูลสำเร็จ",
             text: `โรค ${updatedDisease.name} ถูกอัปเดตแล้ว`,
-            confirmButtonText: "ตกลง"
+            confirmButtonText: "ตกลง",
+            customClass: {
+                confirmButton: "gradient-btn"
+            }
         }).then(() => {
             window.location.href = "admin-mange-diseases.html"; // กลับไปหน้า manage
         });
@@ -56,7 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
             icon: "warning",
             showCancelButton: true,
             confirmButtonText: "ใช่, ลบเลย",
-            cancelButtonText: "ยกเลิก"
+            cancelButtonText: "ยกเลิก",
+            customClass: {
+                confirmButton: "btn btn-danger mx-2",
+                cancelButton: "btn btn-secondary mx-2"
+            },
         }).then((result) => {
             if (result.isConfirmed) {
                 // mock: ลบออกจาก localStorage

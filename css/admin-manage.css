@@ -25,7 +25,6 @@ th {
   border-radius: 0.5rem;
 }
 
-/* ใส่ใน admin-manage.css */
 .comment-cell {
   max-width: 250px;       /* กำหนดความกว้างสูงสุดของ cell */
   white-space: nowrap;    /* ข้อความไม่ขึ้นบรรทัดใหม่ */

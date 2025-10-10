@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop(); 
+  const menuLinks = document.querySelectorAll(".sidebar a");
+
+  menuLinks.forEach(link => {
+    if(link.getAttribute("href").includes(currentPath)) {
+      link.classList.add("active");
+    }
+  });
   // 🔹 Mock data
   const users = [
     { email: "Yoyo@gmail.com", name: "Yoyo", password: "*****", role: "User", createdDate: "2025-04-25", isSuspended: false},
@@ -29,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <td class="text-center">
           <i class="fa-solid fa-pen-to-square text-primary me-2 btn-edit" role="button"></i>
           <i class="${user.isSuspended ? 'fa-solid fa-circle-check text-success' : 'fa-solid fa-ban text-danger'} btn-suspend" role="button"></i>
-          <span class="ms-2">${user.isSuspended ? 'ระงับบัญชี' : ''}</span>
+          <span class="ms-2">${user.isSuspended ? 'บัญชีถูกระงับ' : ''}</span>
         </td>
       `;
       tableBody.appendChild(row);
@@ -71,17 +79,24 @@ document.addEventListener("DOMContentLoaded", () => {
         showCancelButton: true,
         confirmButtonText: "ระงับบัญชี",
         cancelButtonText: "ยกเลิก",
-        buttonsStyling: false, // ให้เราใช้ CSS ของตัวเอง
+        buttonsStyling: false,
         customClass: {
-            confirmButton: 'btn btn-danger btn-lg mx-2',  // Bootstrap classes หรือ CSS ของคุณ
-            cancelButton: 'btn btn-secondary btn-lg mx-2'
+          confirmButton: 'btn btn-danger mx-2',
+          cancelButton: 'btn btn-secondary mx-2'
         },
-        reverseButtons: true
         }).then(result => {
         if (result.isConfirmed) {
             user.isSuspended = true;
             renderTable(users);
-            Swal.fire('ระงับแล้ว!', `บัญชีผู้ใช้ ${user.name} ถูกระงับเรียบร้อยแล้ว.`, 'success');
+            Swal.fire({
+            icon:'success',
+            title:'ระงับแล้ว!', 
+            text:`บัญชีผู้ใช้ ${user.name} ถูกระงับเรียบร้อย`, 
+            confirmButtonText: "ตกลง",
+            customClass: {
+              confirmButton: "gradient-btn"
+            },
+            });
         }
         });
     } else {
@@ -94,14 +109,22 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelButtonText: "ไม่",
         buttonsStyling: false,
         customClass: {
-            confirmButton: 'btn btn-danger btn-lg mx-2',  // Bootstrap classes หรือ CSS ของคุณ
-            cancelButton: 'btn btn-secondary btn-lg mx-2'
+            confirmButton: 'btn btn-success mx-2',
+            cancelButton: 'btn btn-secondary mx-2'
         },
         }).then(result => {
         if (result.isConfirmed) {
             user.isSuspended = false;
             renderTable(users);
-            Swal.fire('เรียบร้อย!', `บัญชีผู้ใช้ ${user.name} สามารถใช้งานได้แล้ว.`, 'success');
+            Swal.fire({
+            icon:'success',
+            title:'เรียบร้อย!', 
+            text:`บัญชีผู้ใช้ ${user.name} สามารถใช้งานได้แล้ว`, 
+            confirmButtonText: "ตกลง",
+            customClass: {
+              confirmButton: "gradient-btn"
+            },
+          });
         }
         });
     }

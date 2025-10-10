@@ -35,14 +35,17 @@
     <!-- Navbar -->
     <nav class="navbar sticky-top shadow-sm bg-white">
         <div class="container d-flex justify-content-between">
-        <!-- Hamburger (แสดงเฉพาะจอเล็ก/กลาง) -->
-            <button class="btn btn-outline-dark d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <!-- Left: Hamburger + Logo -->
+        <div class="d-flex align-items-center">
+            <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
             <i class="fa-solid fa-bars"></i>
             </button>
-        <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <span class="fw-bolder text-primary fs-5">I-Check</span>
-        </a>
+            <!-- Logo I-Check -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
+                <span class="fw-bolder text-primary fs-5">I-Check</span>
+            </a>
+        </div>
 
         <div class="d-flex align-items-center">
             <!-- User Dropdown -->
@@ -52,8 +55,8 @@
                 <span class="text-dark">Admin</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end shadow">
-                <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
-                <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+                <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+                <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
             </ul>
             </div>
         </div>
@@ -73,17 +76,18 @@
             <a href="../admin/admin-manage-users.html" class="d-block mb-1"><i class="fa-regular fa-file-lines me-2"></i> จัดการผู้ใช้งาน</a>
             <a href="../admin/admin-mange-diseases.html" class="d-block mb-1"><i class="fa-solid fa-kit-medical me-2"></i> จัดการโรค</a>
             <a href="../admin/admin-manage-feedbacks.html" class="d-block mb-1"><i class="fa-regular fa-comment me-2"></i> จัดการฟีดแบค</a>
-            <a href="../admin/admin-statics.html" class="d-block mb-1"><i class="fa-regular fa-chart-bar me-2"></i> ข้อมูลเชิงสถิติ</a>
+            <a href="../admin/admin-statics.html" class="d-block mb-1"><i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์</a>
         </div>
         </div>
 
         <!-- Sidebar (แสดงเฉพาะจอใหญ่ขึ้นไป) -->
         <div class="col-lg-2 d-none d-lg-flex flex-column sidebar">
-        <a href="../admin/admin-profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
-        <a href="../admin/admin-manage-users.html"><i class="fa-regular fa-file-lines me-2"></i> จัดการผู้ใช้งาน</a>
-        <a href="../admin/admin-mange-diseases.html"><i class="fa-solid fa-kit-medical me-2"></i> จัดการโรค</a>
-        <a href="../admin/admin-manage-feedbacks.html"><i class="fa-regular fa-comment me-2"></i> จัดการฟีดแบค</a>
-        <a href="../admin/admin-statics.html"><i class="fa-regular fa-chart-bar me-2"></i> ข้อมูลเชิงสถิติ</a>
+            <img src="../images/i-check logo.png" alt="Logo" width="100" height="100" class="rounded-circle shadow mx-auto mb-3">
+            <a href="../admin/admin-profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
+            <a href="../admin/admin-manage-users.html"><i class="fa-regular fa-file-lines me-2"></i> จัดการผู้ใช้งาน</a>
+            <a href="../admin/admin-mange-diseases.html"><i class="fa-solid fa-kit-medical me-2"></i> จัดการโรค</a>
+            <a href="../admin/admin-manage-feedbacks.html"><i class="fa-regular fa-comment me-2"></i> จัดการฟีดแบค</a>
+            <a href="../admin/admin-statics.html"><i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์</a>
         </div>
 
         <class class="col-lg-10 p-5 text-start">
@@ -98,7 +102,7 @@
                 <input type="text" id="searchInput" class="form-control" placeholder="ค้นหาด้วยชื่อโรค หรืออาการ">
             </div>
             
-            <button class="btn btn-primary">เพิ่มโรค</button>
+            <button class="btn btn-primary btn-primary-custom"><i class="fa-solid fa-plus"></i> เพิ่มโรค</button>
             </div>
 
 
@@ -111,7 +115,6 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Content</th>
-                    <th>Source</th>
                     <th>Tags</th>
                     <th>Created Date</th>
                     <th class="text-center">Manage Status</th>

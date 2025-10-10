@@ -1,14 +1,67 @@
-.barchart {
-    height: 400px;
+/* --- General Page Style --- */
+body {
+    background-color: #f0f2f5; /* เปลี่ยนสีพื้นหลังให้ดูสบายตา */
+    font-family: 'Prompt', sans-serif;
 }
 
-.diseasechart {
-    height: 500px;
+.top-text-head-profile {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
 }
 
-.text-head {
-    font-size: 25px;
-    font-weight: 500;
+/* --- Metric Cards (กล่องสรุปผล) --- */
+.metric-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card .card-body {
+    padding: 1.5rem;
+}
+
+.metric-title {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.metric-change {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* --- Chart Cards (การ์ดสำหรับกราฟ) --- */
+.chart-card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-card .card-body {
+    padding: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
 }
 
 @media (max-width: 991.98px) {

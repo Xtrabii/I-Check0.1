@@ -24,13 +24,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- jQuery -->
     <script src="../js/edit-myinfo.js"></script>
+    <script src="../js/script.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/editprofile.css">
 
-    <!-- ต้อง include flatpickr -->
+    <!-- Flatpickr -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/th.js"></script>
@@ -40,14 +41,17 @@
     <!-- Navbar -->
   <nav class="navbar sticky-top shadow-sm bg-white">
     <div class="container d-flex justify-content-between">
-      <!-- Hamburger (แสดงเฉพาะจอเล็ก/กลาง) -->
-        <button class="btn btn-outline-dark d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+      <!-- Left: Hamburger + Logo -->
+      <div class="d-flex align-items-center">
+        <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
           <i class="fa-solid fa-bars"></i>
         </button>
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="./index.html">
-        <span class="fw-bolder text-primary fs-5">I-Check</span>
-      </a>
+        <!-- Logo I-Check -->
+        <a class="navbar-brand d-flex align-items-center" href="./index.html">
+            <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
+            <span class="fw-bolder text-primary fs-5">I-Check</span>
+        </a>
+      </div>
 
       <div class="d-flex align-items-center">
         <!-- User Dropdown -->
@@ -57,8 +61,8 @@
             <span class="text-dark">Tawan</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow">
-            <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
-            <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+            <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+            <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
           </ul>
         </div>
       </div>
@@ -82,6 +86,7 @@
 
     <!-- Sidebar (แสดงเฉพาะจอใหญ่ขึ้นไป) -->
     <div class="col-lg-2 d-none d-lg-flex flex-column sidebar">
+      <img src="../images/i-check logo.png" alt="Logo" width="100" height="100" class="rounded-circle shadow mx-auto mb-3">
       <a href="../user/profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
       <a href="../user/editProfile.html"><i class="fa-regular fa-file-lines me-2"></i> แก้ไขโปรไฟล์</a>
       <a href="../user/editMyInfo.html"><i class="fa-regular fa-calendar me-2"></i> แก้ไขข้อมูลส่วนตัว</a>
@@ -92,81 +97,46 @@
         <hr class="mb-5">
 
         <!-- Content -->
-        <form id="myInfoForm" class="text-start col-12 col-md-7 col-lg-4 mx-auto">
+        <form id="myInfoForm" class="text-start col-12 col-md-8 col-lg-4 mx-auto">
+            <div class="mb-3">
+                <label for="dob" class="form-label text-head-input-myinfo">วัน/เดือน/ปี เกิด</label>
+                <input type="text" class="form-control text-input-myinfo" id="dob" name="dob" placeholder="วัน/เดือน/ปี" required>
+            </div>
 
-        <!-- วัน/เดือน/ปี -->
-        <div class="mb-3">
-            <label for="dob" class="form-label text-head-input-myinfo">วัน/เดือน/ปี เกิด</label>
-            <input type="text" class="form-control text-input-myinfo" id="dob" name="dob" placeholder="วัน/เดือน/ปี" required>
-        </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label text-head-input-myinfo">เพศ</label>
+                <select class="form-select col-12 text-input-myinfo custom-select-source" id="gender" name="gender" required>
+                    <option value="" disabled selected>-- เลือกเพศ --</option>
+                    <option value="ชาย">ชาย</option>
+                    <option value="หญิง">หญิง</option>
+                    <option value="ไม่ระบุเพศ">ไม่ระบุเพศ</option>
+                </select>
+            </div>
 
-        <!-- เพศ -->
-        <div class="mb-3">
-            <label for="gender" class="form-label text-head-input-myinfo">เพศ</label>
-            <select class="form-select col-12 text-input-myinfo" id="gender" name="gender" required>
-            <option value="">-- เลือกเพศ --</option>
-            <option value="ชาย">ชาย</option>
-            <option value="หญิง">หญิง</option>
-            <option value="ไม่ระบุเพศ">ไม่ระบุเพศ</option>
-            </select>
-        </div>
+            <div class="mb-3">
+                <label for="bloodGroup" class="form-label text-head-input-myinfo">กรุ๊ปเลือด</label>
+                <select class="form-select text-input-myinfo custom-select-source" id="bloodGroup" name="bloodGroup" required>
+                    <option value="" disabled selected>-- เลือกกรุ๊ปเลือด --</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option> <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
 
-        <!-- กรุ๊ปเลือด -->
-        <div class="mb-3">
-            <label for="bloodGroup" class="form-label text-head-input-myinfo">กรุ๊ปเลือด</label>
-            <select class="form-select col-12 text-input-myinfo" id="bloodGroup" name="bloodGroup" required>
-            <option value="">-- เลือกกรุ๊ปเลือด --</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="AB">AB</option>
-            <option value="O">O</option>
-            </select>
-        </div>
+            <div class="my-3 form-label text-head-input-myinfo">กรุณาระบุโรคประจำตัว (พิมพ์เพื่อค้นหา หรือเพิ่มใหม่)</div>
+            <div class="tag-container" id="tag-container">
+                <input type="text" id="tag-input" placeholder="เพิ่มโรคประจำตัว...">
+            </div>
+            <div class="suggestions-box" id="suggestions-box"></div>
+            <input type="hidden" name="diseases" id="hidden-diseases-input">
 
-        <div class="form-check form-switch mb-1 my-4">
-            <input class="form-check-input" type="checkbox" id="hasDiseaseSwitch">
-            <label class="form-check-label text-head-input-myinfo" for="hasDiseaseSwitch">ฉันมีโรคประจำตัว</label>
-        </div>
-
-        <div id="diseaseList" class="ms-4 d-none">
-            <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="diabetes" name="diseases" value="โรคเบาหวาน">
-                    <label class="form-check-label text-input-myinfo" for="diabetes">โรคเบาหวาน</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="heart" name="diseases" value="โรคหัวใจ">
-                    <label class="form-check-label text-input-myinfo" for="heart">โรคหัวใจ</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="kidney" name="diseases" value="โรคไต">
-                    <label class="form-check-label text-input-myinfo" for="kidney">โรคไต</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="liver" name="diseases" value="โรคตับ">
-                    <label class="form-check-label text-input-myinfo" for="liver">โรคตับ</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="hypertension" name="diseases" value="ความดันโลหิตสูง">
-                    <label class="form-check-label text-input-myinfo" for="hypertension">ความดันโลหิตสูง</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="asthma" name="diseases" value="โรคหอบ หรือ ถุงลมโป่งพอง">
-                    <label class="form-check-label text-input-myinfo" for="asthma">โรคหอบ หรือ ถุงลมโป่งพอง</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="cholesterol" name="diseases" value="ไขมันในเลือดสูง">
-                    <label class="form-check-label text-input-myinfo" for="cholesterol">ไขมันในเลือดสูง</label>
-                </div>
-                <div class="form-check mb-2">
-                    <input type="checkbox" class="form-check-input" id="epilepsy" name="diseases" value="โรคลมชัก">
-                    <label class="form-check-label text-input-myinfo" for="epilepsy">โรคลมชัก</label>
-                </div>
-        </div>
-
-        <!-- Save Button -->
-        <div class="text-center">
-            <button type="submit" class="btn-save col-10 col-lg-10 my-5">บันทึก</button>
-        </div>
+            <div class="text-center">
+                <button type="submit" class="btn-save col-12 col-md-11 col-lg-10 my-5">บันทึก</button>
+            </div>
         </form>
     
         </div>

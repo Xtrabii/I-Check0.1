@@ -1,65 +1,149 @@
-   /* Sidebar */
-    .sidebar {
-      background: #fff;
-      border-right: 1px solid #e5e5e5;
-      min-height: 100vh;
-      padding: 20px 0;
-    }
-    .sidebar a {
-      display: flex;
-      align-items: center;
-      padding: 12px 20px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .sidebar a:hover {
-      background-color: #f0f2f5;
-    }
-    
-    /* Profile card */
-    .profile-card {
-      background: #032670;
-      border-radius: 8px;
-      color: white;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-    .profile-card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .card-custom {
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      padding: 20px;
-      background: white;
-    }
-    .btn-edit {
-      background: white;
-      border: 1px solid #ccc;
-      color: #333;
-      font-size: 14px;
-      padding: 4px 12px;
-      border-radius: 20px;
-    }
-    .btn-edit:hover {
-      background: #f0f0f0;
-    }
+/* Profile card */
+.profile-card {
+  background: radial-gradient(circle, #2d428a, #0a2266);
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.card-custom {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+.btn-edit {
+  background: white;
+  border: 2px solid #469cff;
+  color: #469cff;
+  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.btn-edit:hover {
+  background: #f0f0f0;
+}
 
-    /* Responsive */
-    @media (max-width: 991.98px) {
-      .sidebar {
-        min-height: auto;
-        border-right: none;
-        border-bottom: 1px solid #e5e5e5;
-      }
-      .sidebar a {
-        justify-content: center;
-      }
-      .profile-card img {
-        margin-bottom: 15px;
-      }
-    }
+/* Sidebar */
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #e5e5e5;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #212529;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease; /* ทำให้เปลี่ยนสีนุ่มๆ */
+}
+.sidebar a:hover {
+  background-color: #dae0e4;
+}
+    
+.sidebar a.active {
+  background: radial-gradient(circle, #2d428a, #0a2266) !important;
+  color: #fff;
+}
+
+/* กล่องหลักที่ครอบ Tag ทั้งหมด */
+.tag-container {
+    display: flex;
+    flex-wrap: wrap; /* ทำให้ Tag ขึ้นบรรทัดใหม่เมื่อไม่พอ */
+    align-items: center;
+    gap: 8px; /* ระยะห่างระหว่าง Tag */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    cursor: text; /* ทำให้ Cursor เป็นรูป I-beam เมื่อชี้ */
+    min-height: 40px;
+}
+
+/* สไตล์ของ Tag แต่ละอัน */
+.tag {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+/* ปุ่มกากบาท (x) สำหรับลบ Tag */
+.tag-close {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.tag-close:hover {
+    background-color: #eee;
+}
+
+/* ช่องสำหรับพิมพ์ข้อความ */
+#tag-input {
+    border: none;
+    outline: none;
+    flex-grow: 1; /* ทำให้ช่องพิมพ์ขยายเต็มพื้นที่ที่เหลือ */
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* กล่องแสดงรายการคำแนะนำ (Autocomplete) */
+.suggestions-box {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    background-color: #fff;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* ซ่อนไว้เป็นค่าเริ่มต้น */
+}
+
+/* รายการคำแนะนำแต่ละอัน */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #003de6;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .sidebar {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .sidebar a {
+    justify-content: center;
+  }
+  .profile-card img {
+    margin-bottom: 15px;
+  }
+}

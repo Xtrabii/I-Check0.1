@@ -23,30 +23,35 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/profile.css">
+
+    <script src="../js/edit-profile.js"></script>
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar sticky-top shadow-sm bg-white">
   <div class="container d-flex justify-content-between">
-    <!-- Hamburger (แสดงเฉพาะจอเล็ก/กลาง) -->
-      <button class="btn btn-outline-dark d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+    <!-- Left: Hamburger + Logo -->
+    <div class="d-flex align-items-center">
+      <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
         <i class="fa-solid fa-bars"></i>
       </button>
-    <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="./index.html">
-      <span class="fw-bolder text-primary fs-5">I-Check</span>
-    </a>
+      <!-- Logo I-Check -->
+      <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
+          <span class="fw-bolder text-primary fs-5">I-Check</span>
+      </a>
+    </div>
 
+    <!-- Right: User Dropdown -->
     <div class="d-flex align-items-center">
-      <!-- User Dropdown -->
       <div class="dropdown">
         <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <img src="../images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
           <span class="text-dark">Tawan</span>
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow">
-          <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
-          <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+          <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+          <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
         </ul>
       </div>
     </div>
@@ -70,6 +75,7 @@
 
     <!-- Sidebar (แสดงเฉพาะจอใหญ่ขึ้นไป) -->
     <div class="col-lg-2 d-none d-lg-flex flex-column sidebar">
+      <img src="../images/i-check logo.png" alt="Logo" width="100" height="100" class="rounded-circle shadow mx-auto mb-3">
       <a href="../user/profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
       <a href="../user/editProfile.html"><i class="fa-regular fa-file-lines me-2"></i> แก้ไขโปรไฟล์</a>
       <a href="../user/editMyInfo.html"><i class="fa-regular fa-calendar me-2"></i> แก้ไขข้อมูลส่วนตัว</a>
@@ -78,7 +84,7 @@
       <!-- Main Content -->
       <div class="col-lg-9 p-4 justify-content-center mx-auto my-4">
         <!-- Profile Info -->
-        <div class="profile-card p-3 mb-4">
+        <div class="profile-card p-3 mb-4 shadow-lg">
         <div class="d-flex justify-content-between align-items-start col-12">
             <!-- Left: รูป + ข้อมูล -->
             <div class="d-flex align-items-center flex-grow-1 mx-lg-4">
@@ -98,7 +104,7 @@
         <div class="row g-4">
           <!-- Account Info -->
           <div class="col-md-6">
-            <div class="card-custom">
+            <div class="card-custom shadow-lg">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h6><i class="fa-regular fa-user me-2"></i> บัญชี</h6>
                 <a href="../user/edit-password.html" class="text-decoration-none btn-edit">แก้ไข</a>
@@ -110,7 +116,7 @@
 
           <!-- Personal Info -->
           <div class="col-md-6">
-            <div class="card-custom">
+            <div class="card-custom shadow-lg">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h6><i class="fa-regular fa-id-card me-2"></i> ข้อมูลส่วนตัว</h6>
                 <a href="../user/editMyInfo.html" class="text-decoration-none btn-edit">แก้ไข</a>
@@ -133,6 +139,6 @@
       </div>
     </div>
   </div>
-    
+
 </body>
 </html>

@@ -3,6 +3,15 @@
 // ไม่ต้องมีปุ่ม Save เพิ่ม เพราะระบบทำงานให้อัตโนมัติ
 
 document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop(); 
+  const menuLinks = document.querySelectorAll(".sidebar a");
+
+  menuLinks.forEach(link => {
+    if(link.getAttribute("href").includes(currentPath)) {
+      link.classList.add("active");
+    }
+  });
+
   const editIcon = document.querySelector(".edit-icon");
   const profileInput = document.getElementById("profileImageInput");
   const profileImage = document.getElementById("profileImage");

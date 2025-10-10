@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname.split("/").pop(); 
+  const menuLinks = document.querySelectorAll(".sidebar a");
+
+  menuLinks.forEach(link => {
+    if(link.getAttribute("href").includes(currentPath)) {
+      link.classList.add("active");
+    }
+  });
   const tableBody = document.getElementById("userTableBody");
   const searchInput = document.getElementById("searchInput");
   const userCount = document.getElementById("userCount");

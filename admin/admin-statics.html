@@ -28,6 +28,7 @@
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <script src="../js/admin-statics.js" defer></script>
 
 </head>
@@ -35,14 +36,17 @@
     <!-- Navbar -->
   <nav class="navbar sticky-top shadow-sm bg-white">
     <div class="container d-flex justify-content-between">
-      <!-- Hamburger (แสดงเฉพาะจอเล็ก/กลาง) -->
-        <button class="btn btn-outline-dark d-lg-none me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+      <!-- Left: Hamburger + Logo -->
+      <div class="d-flex align-items-center">
+        <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
           <i class="fa-solid fa-bars"></i>
         </button>
-      <!-- Logo -->
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <span class="fw-bolder text-primary fs-5">I-Check</span>
-      </a>
+        <!-- Logo I-Check -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
+            <span class="fw-bolder text-primary fs-5">I-Check</span>
+        </a>
+      </div>
 
       <div class="d-flex align-items-center">
         <!-- User Dropdown -->
@@ -52,8 +56,8 @@
             <span class="text-dark">Admin</span>
           </a>
           <ul class="dropdown-menu dropdown-menu-end shadow">
-            <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
-            <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+            <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+            <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
           </ul>
         </div>
       </div>
@@ -73,58 +77,84 @@
         <a href="../admin/admin-manage-users.html" class="d-block mb-1"><i class="fa-regular fa-file-lines me-2"></i> จัดการผู้ใช้งาน</a>
         <a href="../admin/admin-mange-diseases.html" class="d-block mb-1"><i class="fa-solid fa-kit-medical me-2"></i> จัดการโรค</a>
         <a href="../admin/admin-manage-feedbacks.html" class="d-block mb-1"><i class="fa-regular fa-comment me-2"></i> จัดการฟีดแบค</a>
-        <a href="../admin/admin-statics.html" class="d-block mb-1"><i class="fa-regular fa-chart-bar me-2"></i> ข้อมูลเชิงสถิติ</a>
+        <a href="../admin/admin-statics.html" class="d-block mb-1"><i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์</a>
       </div>
     </div>
 
     <!-- Sidebar (แสดงเฉพาะจอใหญ่ขึ้นไป) -->
     <div class="col-lg-2 d-none d-lg-flex flex-column sidebar">
+      <img src="../images/i-check logo.png" alt="Logo" width="100" height="100" class="rounded-circle shadow mx-auto mb-3">
       <a href="../admin/admin-profile.html"><i class="fa-regular fa-user me-2"></i> โปรไฟล์</a>
       <a href="../admin/admin-manage-users.html"><i class="fa-regular fa-file-lines me-2"></i> จัดการผู้ใช้งาน</a>
       <a href="../admin/admin-mange-diseases.html"><i class="fa-solid fa-kit-medical me-2"></i> จัดการโรค</a>
       <a href="../admin/admin-manage-feedbacks.html"><i class="fa-regular fa-comment me-2"></i> จัดการฟีดแบค</a>
-      <a href="../admin/admin-statics.html"><i class="fa-regular fa-chart-bar me-2"></i> ข้อมูลเชิงสถิติ</a>
+      <a href="../admin/admin-statics.html"><i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์</a>
     </div>
 
-     <class class="col-lg-10 p-5 text-start">
-        <span class="mb-4 top-text-head-profile"><i class="fa-regular fa-chart-bar me-2 mb-4"></i>ข้อมูลเชิงสถิติ</span>
+     <div class="col-lg-10 p-5"> <h2 class="mb-4 top-text-head-profile">
+        <i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์
+    </h2>
 
-        <!-- Content -->
-        <div class="row">
-        <!-- ฟีดแบค -->
-        <div class="col-12 mb-4">
-            <div class="card shadow-sm p-4">
-            <h5 class="mb-3 text-head">ฟีดแบค</h5>
-            <div class="row g-4 align-items-center">
-                <!-- Bar chart -->
-                <div class="col-12 col-md-7 barchart">
-                <canvas id="feedbackBarChart"></canvas>
-                </div>
-                <!-- Pie chart -->
-                <div class="col-12 col-md-5 d-flex justify-content-center">
-                <div style="max-width: 300px; width: 100%;">
-                    <canvas id="feedbackPieChart"></canvas>
-                </div>
+    <div class="row g-4 mb-4">
+        <div class="col-lg-4 col-md-6">
+            <div class="metric-card h-100">
+                <div class="card-body">
+                    <p class="metric-title">การวินิจฉัยทั้งหมด</p>
+                    <h3 class="metric-value">15,873</h3>
                 </div>
             </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+            <div class="metric-card h-100">
+                <div class="card-body">
+                    <p class="metric-title">ความแม่นยำ</p>
+                    <h3 class="metric-value">88%</h3>
+                    <span class="metric-change">
+                         <i class="fa-solid fa-bullseye"></i> สม่ำเสมอ
+                    </span>
+                </div>
             </div>
         </div>
-
-        <!-- โรคที่วินิจฉัยพบมากที่สุด -->
-        <div class="col-12 mb-4">
-            <div class="card shadow-sm p-4">
-            <h5 class="mb-3 text-head">โรคที่วินิจฉัยพบมากที่สุด</h5>
-            <div class="diseasechart">
-                <canvas id="diseaseChart"></canvas>
+        <div class="col-lg-4 col-md-12">
+            <div class="metric-card h-100">
+                <div class="card-body">
+                    <p class="metric-title">ผู้ใช้ทั้งหมด</p>
+                    <h3 class="metric-value">4,105</h3>
+                     <span class="metric-change">
+                        <i class="fa-solid fa-users"></i> ผู้ใช้
+                    </span>
+                </div>
             </div>
-            </div>
         </div>
-        </div>
-
-        </div>
-      </div>
     </div>
-  </div>
+
+
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="chart-card mb-4">
+                <div class="card-body">
+                    <h5 class="chart-title">ฟีดแบคผู้ใช้</h5>
+                    <div class="mb-4" style="height: 250px;">
+                        <canvas id="feedbackBarChart"></canvas>
+                    </div>
+                    <div style="height: 250px;">
+                        <canvas id="feedbackPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="chart-card h-100">
+                <div class="card-body">
+                    <h5 class="chart-title">โรคที่ถูกวินิจฉัยสูงสุด</h5>
+                    <div style="height: 550px;"> <canvas id="diseaseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     
 </body>
 </html>

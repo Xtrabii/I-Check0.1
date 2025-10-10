@@ -28,21 +28,21 @@
 
   <title>Diagnosis</title>
 </head>
-<body class="home-page" style="background-color:#ffffff;">
+<body class="home-page">
 
 <!-- Navbar -->
 <nav class="navbar sticky-top shadow-sm bg-white">
   <div class="container d-flex align-items-center justify-content-between">
     <!-- Logo -->
     <a class="navbar-brand d-flex align-items-center" href="./index.html">
-      <img src="../images/i-check logo.jpg" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow">
-      <span class="text-dark fs-5">I-Check</span>
+      <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow">
+      <span class="fw-bolder text-primary fs-5">I-Check</span>
     </a>
 
     <!-- Navbar links -->
     <ul class="navbar-nav d-flex flex-row gap-3 nav-underline me-auto">
       <li class="nav-item">
-        <a class="nav-link active fw-medium" href="./index.html">Diagnosis</a>
+        <a class="nav-link active fw-medium" href="./index.html">วินิจฉัยอาการ</a>
       </li>
     </ul>
 
@@ -53,8 +53,8 @@
         <span class="text-dark">Tawan</span>
       </a>
       <ul class="dropdown-menu dropdown-menu-end shadow">
-        <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> My Profile</a></li>
-        <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> Logout</a></li>
+        <li><a class="dropdown-item nav-hover" href="../user/profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+        <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
       </ul>
     </div>
   </div>
@@ -70,7 +70,7 @@
   <div class="accordion" id="symptomAccordion">
 
     <!-- บริเวณศรีษะ -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
+    <div class="accordion-item mb-3 shadow-lg my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
         <button class="accordion-button accordion-button-normal collapsed accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#head">
           <img src="../images/icons/head-brain.png" class="rounded-circle shadow-sm mx-3 icon-accordion">บริเวณศรีษะ
@@ -114,6 +114,11 @@
               <img src="../images/icons/blurred.png" class="rounded-circle shadow-sm p-2 icon-symptom">
               <p class="mt-2 small symptom-text">สายตาพร่ามัว</p>
             </div>
+            <!-- อาการ -->
+            <div class="col-5 col-md-2 col-lg-1 text-center symptom" data-symptom="blurred-vision">
+              <img src="../images/icons/#" class="rounded-circle shadow-sm p-2 icon-symptom">
+              <p class="mt-2 small symptom-text">ใส่เพิ่ม</p>
+            </div>
 
           </div>
         </div>
@@ -121,7 +126,7 @@
     </div>
 
     <!-- บริเวณลำตัวช่วงอก - ท้อง -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
+    <div class="accordion-item mb-3 shadow-lg my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
         <button class="accordion-button accordion-button-normal collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#chestAndAbdomen">
           <img src="../images/icons/chest-area.png" class="rounded-circle shadow-sm mx-3 icon-accordion">บริเวณลำตัวช่วงอก - ท้อง
@@ -157,7 +162,7 @@
     </div>
 
     <!-- บริเวณลำตัวส่วนล่างช่วงเอว - ขา -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
+    <div class="accordion-item mb-3 shadow-lg my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
         <button class="accordion-button accordion-button-normal collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#waistAndLegs">
           <img src="../images/icons/lower-body-area.png" class="rounded-circle shadow-sm mx-3 icon-accordion">บริเวณลำตัวส่วนล่างช่วงเอว - ขา
@@ -183,7 +188,7 @@
     </div>
 
     <!-- ทั่วไป -->
-    <div class="accordion-item mb-3 shadow-sm my-4 col-11 col-md-12 col-lg-11 mx-auto">
+    <div class="accordion-item mb-3 shadow-lg my-4 col-11 col-md-12 col-lg-11 mx-auto">
       <h2 class="accordion-header">
         <button class="accordion-button accordion-button-normal collapsed  accord-text" type="button" data-bs-toggle="collapse" data-bs-target="#normal">
           <img src="../images/icons/all-body.png" class="rounded-circle shadow-sm mx-3 icon-accordion">ทั่วไป
@@ -220,7 +225,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-4 mx-auto mb-3 mb-md-0 text-center text-md-start">
-          <h5><img src="../images/i-check logo.jpg" alt="Logo" width="30" height="30" class="me-2 rounded-circle shadow"> I-Check</h5>
+          <h5><img src="../images/i-check logo.png" alt="Logo" width="50" height="50" class="me-2 rounded-circle shadow"> I-Check</h5>
           <p class="small">ระบบวิเคราะห์อาการเบื้องต้น</p>
           © 2025 I-Check | All Rights Reserved
         </div>
