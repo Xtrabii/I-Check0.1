@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     }
                 },
-                // ✨ เพิ่ม datalabels สำหรับกราฟวงกลม ✨
+                // datalabels สำหรับกราฟวงกลม
                 datalabels: {
                     color: '#fff', // สีตัวอักษร
                     font: { weight: 'bold', size: 14 },
