@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             text: `คุณต้องการลบโรค "${disease.name}" หรือไม่?`,
             icon: "warning",
             showCancelButton: true,
-            confirmButtonText: "ใช่, ลบเลย",
+            confirmButtonText: "ลบโรค",
             cancelButtonText: "ยกเลิก",
             customClass: {
                 confirmButton: "btn btn-danger mx-2",
@@ -73,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     icon: "success",
                     title: "ลบข้อมูลสำเร็จ",
                     text: "โรคถูกลบออกจากระบบแล้ว",
+                    confirmButtonText: "ตกลง",
+                    customClass: {
+                        confirmButton: "gradient-btn",
+                    },
                 }).then(() => {
                     window.location.href = "admin-mange-diseases.html";
                 });
