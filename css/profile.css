@@ -1,23 +1,36 @@
 /* Profile card */
-.profile-card {
-  background: radial-gradient(circle, #2d428a, #0a2266);
-  border-radius: 8px;
-  color: white;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-.profile-card img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 .card-custom {
-  border: 1px solid #e5e5e5;
-  border-radius: 8px;
-  padding: 20px;
-  background: white;
+    padding: 2rem; 
+    border-radius: 12px; 
+    /* สีพื้นหลัง */
+    background-color: #ffffff; 
+    /* ให้การ์ดสูงเท่ากัน */
+    height: 100%; 
 }
+
+.profile-card {
+    padding: 2rem; /* สำหรับจอใหญ่ */
+    border-radius: 12px;
+    background: radial-gradient(circle, #2d428a, #0a2266) !important;
+    color: white;
+}
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table td {
+    /* ใช้คุณสมบัตินี้เพื่อควบคุมการแสดงผลของข้อความที่ยาวเกินไป */
+    word-break: break-word; 
+    /* หรือใช้ overflow-wrap: break-word; สำหรับการรองรับที่ดีขึ้นในบางเบราว์เซอร์ */
+    overflow-wrap: break-word;
+    border-top: none !important;
+    padding-left: 0 !important;
+}
+
 .btn-edit {
   background: white;
   border: 2px solid #469cff;
@@ -32,29 +45,32 @@
 
 /* Sidebar */
 .sidebar {
-  background: #fff;
-  border-right: 1px solid #e5e5e5;
-  min-height: 100vh;
-  padding: 20px 0;
-}
-.sidebar a {
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  color: #212529;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease; /* ทำให้เปลี่ยนสีนุ่มๆ */
-}
-.sidebar a:hover {
-  background-color: #dae0e4;
-}
-    
-.sidebar a.active {
-  background: radial-gradient(circle, #2d428a, #0a2266) !important;
-  color: #fff;
+    /* ใช้สีพื้นหลังที่ดูดีกว่า */
+    background-color: #f6fbff; 
+    padding-top: 2rem;
+    height: 100vh; /* ให้สูงเต็มจอ */
+    position: sticky; /* ให้ติดอยู่กับที่เมื่อ scroll */
+    top: 0;
+    border-right: 1px solid #e0e0e0;
 }
 
+.sidebar a {
+    color: #333;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: radial-gradient(circle, #2d428a, #0a2266) !important;
+    color: #ffffff;
+    font-weight: 500;
+}
+    
 /* กล่องหลักที่ครอบ Tag ทั้งหมด */
 .tag-container {
     display: flex;
@@ -143,7 +159,12 @@
   .sidebar a {
     justify-content: center;
   }
-  .profile-card img {
-    margin-bottom: 15px;
+
+  .profile-card {
+    padding: 1rem; 
+  }
+  .profile-img {
+    width: 100px; 
+    height: 100px;
   }
 }
