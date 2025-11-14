@@ -37,32 +37,29 @@
 
     <!-- Navbar -->
     <nav class="navbar sticky-top shadow-sm bg-white">
-        <div class="container d-flex justify-content-between">
-        <!-- Left: Hamburger + Logo -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex w-75 align-items-center px-3 mx-auto">
+            <div class="d-flex align-items-center me-auto"> 
             <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-            <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
-            <!-- Logo I-Check -->
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="./index.html">
                 <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
                 <span class="fw-bolder text-primary fs-5">I-Check</span>
             </a>
-        </div>
+            </div>
 
-        <div class="d-flex align-items-center">
-            <!-- User Dropdown -->
+            <div class="d-flex align-items-center">
             <div class="dropdown">
-            <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="../images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
                 <span class="text-dark">Admin</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end shadow">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end shadow">
                 <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
                 <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
-            </ul>
+                </ul>
             </div>
-        </div>
+            </div>
         </div>
     </nav>
 

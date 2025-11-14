@@ -31,34 +31,31 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar sticky-top shadow-sm bg-white">
-    <div class="container d-flex justify-content-between">
-      <!-- Left: Hamburger + Logo -->
-      <div class="d-flex align-items-center">
-        <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-        <!-- Logo I-Check -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
-            <span class="fw-bolder text-primary fs-5">I-Check</span>
-        </a>
-      </div>
+  <div class="d-flex w-75 align-items-center px-3 mx-auto">
+    <div class="d-flex align-items-center me-auto"> 
+      <button class="btn btn-outline-dark d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <a class="navbar-brand d-flex align-items-center" href="./index.html">
+          <img src="../images/i-check logo.png" alt="Logo" width="45" height="45" class="me-2 rounded-circle shadow d-lg-none">
+          <span class="fw-bolder text-primary fs-5">I-Check</span>
+      </a>
+    </div>
 
-      <div class="d-flex align-items-center">
-        <!-- User Dropdown -->
-        <div class="dropdown">
-          <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
-            <span class="text-dark">Admin</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end shadow">
-            <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
-            <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
-          </ul>
-        </div>
+    <div class="d-flex align-items-center">
+      <div class="dropdown">
+        <a class="d-flex align-items-center text-decoration-none" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="../images/profile2.jpg" alt="user" width="45" height="45" class="rounded-circle shadow me-2">
+          <span class="text-dark">Admin</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow">
+          <li><a class="dropdown-item nav-hover" href="../admin/admin-profile.html"><i class="fa-regular fa-circle-user me-2"></i> โปรไฟล์</a></li>
+          <li><a class="dropdown-item nav-hover" href="../login.html"><i class="fa-solid fa-arrow-right-from-bracket me-2"></i> ออกจากระบบ</a></li>
+        </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <div class="container-fluid">
   <div class="row">
@@ -87,55 +84,43 @@
       <a href="../admin/admin-statics.html"><i class="fa-solid fa-chart-line me-2"></i> แดชบอร์ดการวิเคราะห์</a>
     </div>
 
-     <div class="col-lg-10 p-4 p-md-5">
-    <div class="text-center text-md-center">
-        <h2 class="top-text-head-profile mb-4"><i class="fa-regular fa-user me-2"></i>แก้ไขโปรไฟล์</h2>
-    </div>
-
-    <div class="card shadow-sm profile-card">
-        <div class="card-body p-4 p-md-5">
-
-            <div class="text-center mb-5">
-                <div class="profile-pic-wrapper">
-                    <img id="profileImage" src="../images/profile2.jpg" alt="Profile" class="shadow">
-                    <div class="edit-icon" id="editProfilePicBtn">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                    <input type="file" id="profileImageInput" accept="image/*" style="display:none;">
-                </div>
+    <!-- Main Content -->
+    <div class="col-lg-9 p-4 justify-content-center mx-auto my-4">
+        <!-- Profile Info -->
+        <div class="profile-card mb-4 shadow-lg">
+        <div class="d-flex justify-content-between align-items-start">
+            <!-- Left: รูป + ข้อมูล -->
+            <div class="d-flex align-items-center me-auto">
+            <img src="../images/profile2.jpg" alt="Profile" class="profile-img me-3">
+            <div class="mx-lg-3">
+                <h4 class="mb-1">Tawan</h4>
+                <small>เป็นสมาชิกตั้งแต่ 20/04/2025</small>
             </div>
-
-            <div class="info-list">
-                <div class="info-item">
-                    <div class="item-content">
-                        <span class="item-label">ชื่อ</span>
-                        <span class="item-value">Admin</span>
-                    </div>
-                    <a href="../admin/admin-edit-name.html" class="btn btn-edit">แก้ไข</a>
-                </div>
-
-                <div class="info-item">
-                    <div class="item-content">
-                        <span class="item-label">อีเมล</span>
-                        <span class="item-value">verylongemailaddressverylongsolongemailaddress@gmail.com</span>
-                        <small class="text-readonly mt-1 d-block">
-                            <i class="fa-regular fa-circle-xmark me-1"></i> ไม่สามารถแก้ไขได้
-                        </small>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="item-content">
-                        <span class="item-label">รหัสผ่าน</span>
-                        <span class="item-value">••••••••••••••</span>
-                    </div>
-                    <a href="../admin/admin-edit-password.html" class="btn btn-edit">แก้ไข</a>
-                </div>
             </div>
-
+            <!-- Right: ปุ่มแก้ไข --> 
+             <a href="../admin/admin-edit-name.html" class="text-decoration-none btn-edit">แก้ไข</a>
         </div>
+      </div>
+
+
+        <!-- Account + Personal Info -->
+        <div class="row g-4 justify-content-center">
+          <!-- Account Info -->
+          <div class="col-md-12 col-lg-12">
+            <div class="card-custom shadow-lg">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4><i class="fa-regular fa-user me-2"></i> บัญชี</h4>
+                <a href="../admin/admin-edit-password.html" class="text-decoration-none btn-edit">แก้ไข</a>
+              </div>
+              <p class="mb-2"><i class="fa-regular fa-envelope me-2"></i> tawan@gmail.com</p>
+              <p class="mb-0"><i class="fa-solid fa-lock me-2"></i> *********</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-</div>
+  </div>
 
 </body>
 </html>

@@ -107,14 +107,6 @@
   margin-right: 15px;
 }
 
-/* --- Profile Card --- */
-.profile-card {
-    border: none;
-    border-radius: 1rem;
-    max-width: 800px;
-    margin: 0 auto; /* ทำให้การ์ดอยู่กึ่งกลาง */
-}
-
 /* --- Profile Picture --- */
 .profile-pic-wrapper {
     position: relative;

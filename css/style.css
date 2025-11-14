@@ -3,7 +3,7 @@ body {
   background: radial-gradient(circle, #f9fbff, #f6fbff);
   font-family: 'Kanit','Noto Sans Thai','Mitr' ,sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 17px;
   }
 
 h1, h2, h3, h4, h5, h6 {
@@ -178,12 +178,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .emoji:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 5px #032670);
+  filter: drop-shadow(0 0 5px #8d7300);
 }
 
 .emoji.selected {
   transform: scale(1.3);
-  filter: drop-shadow(0 0 5px #032670);
+  filter: drop-shadow(0 0 5px #8d7300);
 }
 
 .text-decoration-under{
@@ -195,11 +195,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* accordion */
-.accord-text{
-  background: radial-gradient(circle, #a8d8ff, #b5d5ff);
-  color: #000000;
-  font-weight: 500;
-  font-size: 18px;
+/* 1. จัดการให้ขอบของ accordion-item และ accordion-header โค้งตามต้องการ */
+.accordion-item {
+    border-radius: 15px !important; /* !important เพื่อให้แน่ใจว่าใช้ค่านี้ */
+    overflow: hidden; /* สำคัญ: ซ่อนขอบของลูกที่อาจยื่นออกมา */
+}
+
+/* 2. ลบ border-radius ที่ขอบด้านล่างของปุ่ม เมื่อมันเป็นส่วนหัวของ Accordion ที่เปิดอยู่ */
+.accordion-item:has(.accordion-button:not(.collapsed)) .accordion-header .accordion-button {
+    /* เมื่อ Accordion ถูกเปิด (ปุ่มไม่มีคลาส .collapsed) ให้ลบโค้งด้านล่าง */
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* 3. จัดการขอบโค้งด้านบนของ Accordion ตัวแรก */
+.accordion-item:first-of-type {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+/* 4. จัดการขอบโค้งด้านล่างของ Accordion ตัวสุดท้าย */
+/* หากคุณต้องการให้ Accordion อันสุดท้ายมีขอบโค้งเสมอ แม้จะเปิดอยู่ */
+.accordion-item:last-of-type {
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+}
+
+/* 5. แก้ไข Accordion Button ให้มี border-radius ที่ด้านบนและล่างตามปกติ (ถ้าไม่ชนขอบ) */
+.accord-text {
+    background: radial-gradient(circle, #a8d8ff, #b5d5ff);
+    color: #000000;
+    font-weight: 500;
+    font-size: 24px;
+    border-radius: 15px !important; /* กำหนดให้โค้งทั้งหมด */
+}
+
+/* 6. ลบขอบโค้งด้านบนของ accordion-body ออก เพื่อให้ไม่ชนกับ header ที่เปิดอยู่ */
+.accordion-body {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
 }
 
 .icon-accordion {
